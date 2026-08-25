@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind v4 theme mapping. Every entry points at a runtime CSS variable
+ * (defined below) instead of a literal value, so switching [data-theme]
+ * or [data-role] on <html> repaints every utility class with zero JS/rebuild.
+ * See client/context/ui-tokens.md for the source of truth on these values.
+ */
+@theme inline {
+  /* Wipe Tailwind's default color palette so bg-blue-600 / text-gray-500
+     etc. simply don't exist — only the tokens below are selectable. */
+  --color-*: initial;
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-secondary: var(--color-surface-secondary);
+  --color-border: var(--color-border);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverse: var(--color-text-inverse);
+
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-red-land: var(--color-red-land);
+  --color-red-land-light: var(--color-red-land-light);
+  --color-blue-land: var(--color-blue-land);
+  --color-blue-land-light: var(--color-blue-land-light);
+  --color-success: var(--color-success);
+  --color-success-light: var(--color-success-light);
+  --color-warning: var(--color-warning);
+  --color-warning-light: var(--color-warning-light);
+  --color-error: var(--color-error);
+  --color-error-light: var(--color-error-light);
+  --color-info: var(--color-info);
+  --color-info-light: var(--color-info-light);
+
+  /* Degree class / grade tokens — always aliases of the semantic set above,
+     never redefined with their own hex values (see ui-tokens.md). */
+  --color-distinction: var(--color-accent);
+  --color-merit: var(--color-success);
+  --color-pass: var(--color-info);
+  --color-fail: var(--color-error);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+}
+
+/* Neutrals — light (default) */
+:root {
+  --color-background: #f3f5f9;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #eef1f6;
+  --color-border: #e1e6ee;
+  --color-text-primary: #13223d;
+  --color-text-secondary: #5b6675;
+  --color-text-muted: #98a2b3;
+  --color-text-inverse: #ffffff;
+
+  /* Shared semantic tokens — identical meaning across every role */
+  --color-accent: #b9902f;
+  --color-accent-light: #fbf3de;
+  --color-red-land: #c0392b;
+  --color-red-land-light: #fbe4e1;
+  --color-blue-land: #1f5fa8;
+  --color-blue-land-light: #e1ebf7;
+  --color-success: #1e8a5f;
+  --color-success-light: #dff3ea;
+  --color-warning: #c9791d;
+  --color-warning-light: #fbead7;
+  --color-error: #c0392b;
+  --color-error-light: #fbe4e1;
+  --color-info: #2c6fbb;
+  --color-info-light: #e4eef9;
+
+  --font-sans: "Public Sans", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Default role primary until AppShell sets data-role from the session —
+     falls back to the Officer palette. */
+  --color-primary: #2159a6;
+  --color-primary-dark: #123b75;
+  --color-primary-light: #e4ecf8;
+}
+
+/* Neutrals — dark. AppShell always sets data-theme explicitly from the user's
+   toggle preference (never left to system default), so no prefers-color-scheme
+   fallback is needed here — see architecture.md Authentication / ui-rules.md Topbar. */
+[data-theme="dark"] {
+  --color-background: #0f1620;
+  --color-surface: #161f2c;
+  --color-surface-secondary: #1d2733;
+  --color-border: #2a3644;
+  --color-text-primary: #edf1f7;
+  --color-text-secondary: #a9b4c4;
+  --color-text-muted: #6c7789;
+  --color-text-inverse: #0f1620;
+
+  --color-accent: #d9b454;
+  --color-accent-light: #3a2e12;
+  --color-red-land: #e5675a;
+  --color-red-land-light: #4a1f1b;
+  --color-blue-land: #6aa3e0;
+  --color-blue-land-light: #16283d;
+  --color-success: #34c97a;
+  --color-success-light: #163c29;
+  --color-warning: #f0a648;
+  --color-warning-light: #4a2f12;
+  --color-error: #e5675a;
+  --color-error-light: #4a1f1b;
+  --color-info: #6aa3e0;
+  --color-info-light: #16283d;
+}
+
+/* Role palettes — the one axis that differs Officer / Directing Staff / Admin.
+   Set once per session via data-role on <html> from the authenticated user's
+   role — never user-selectable (see ui-tokens.md Invariants). */
+[data-role="officer"] {
+  --color-primary: #2159a6;
+  --color-primary-dark: #123b75;
+  --color-primary-light: #e4ecf8;
+}
+[data-role="officer"][data-theme="dark"] {
+  --color-primary: #5b9be0;
+  --color-primary-dark: #0e2a54;
+  --color-primary-light: #1b3a63;
+}
+
+[data-role="directing-staff"] {
+  --color-primary: #2e7d46;
+  --color-primary-dark: #1f5730;
+  --color-primary-light: #e3f1e7;
+}
+[data-role="directing-staff"][data-theme="dark"] {
+  --color-primary: #5fbe7c;
+  --color-primary-dark: #183f26;
+  --color-primary-light: #1e3b27;
+}
+
+[data-role="admin"] {
+  --color-primary: #4b5563;
+  --color-primary-dark: #30363f;
+  --color-primary-light: #e9ebee;
+}
+[data-role="admin"][data-theme="dark"] {
+  --color-primary: #9ca3af;
+  --color-primary-dark: #23262b;
+  --color-primary-light: #2a2e35;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}

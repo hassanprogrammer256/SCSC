@@ -1,0 +1,78 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "installedAt": "2026-08-22T12:26:42.784Z",
+      "updatedAt": "2026-08-22T12:26:42.784Z"
+    },
+    "architect": {
+      "source": "JavaScript-Mastery-Pro/jsm-agent-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/JavaScript-Mastery-Pro/jsm-agent-skill.git",
+      "skillPath": "skills/architect/SKILL.md",
+      "skillFolderHash": "130d344ca6db1938f6a28c03fa3b3a4e45573042",
+      "installedAt": "2026-08-24T15:29:31.112Z",
+      "updatedAt": "2026-08-24T15:29:31.112Z"
+    },
+    "imprint": {
+      "source": "JavaScript-Mastery-Pro/jsm-agent-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/JavaScript-Mastery-Pro/jsm-agent-skill.git",
+      "skillPath": "skills/imprint/SKILL.md",
+      "skillFolderHash": "7ae49f698d537fae7c25326576eefae1614ca8c1",
+      "installedAt": "2026-08-24T15:29:31.118Z",
+      "updatedAt": "2026-08-24T15:29:31.118Z"
+    },
+    "recover": {
+      "source": "JavaScript-Mastery-Pro/jsm-agent-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/JavaScript-Mastery-Pro/jsm-agent-skill.git",
+      "skillPath": "skills/recover/SKILL.md",
+      "skillFolderHash": "0b3373ddee0324350e0fc62eaf1d19c24f785266",
+      "installedAt": "2026-08-24T15:29:31.122Z",
+      "updatedAt": "2026-08-24T15:29:31.122Z"
+    },
+    "remember": {
+      "source": "JavaScript-Mastery-Pro/jsm-agent-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/JavaScript-Mastery-Pro/jsm-agent-skill.git",
+      "skillPath": "skills/remember/SKILL.md",
+      "skillFolderHash": "6c23b6dac774bad83c6dd306a3484451703d984b",
+      "installedAt": "2026-08-24T15:29:31.126Z",
+      "updatedAt": "2026-08-24T15:29:31.126Z"
+    },
+    "review": {
+      "source": "JavaScript-Mastery-Pro/jsm-agent-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/JavaScript-Mastery-Pro/jsm-agent-skill.git",
+      "skillPath": "skills/review/SKILL.md",
+      "skillFolderHash": "de0b94d9684eafa09cab041b059ce24727bfedee",
+      "installedAt": "2026-08-24T15:29:31.130Z",
+      "updatedAt": "2026-08-24T15:29:31.130Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code"
+  ]
+}
