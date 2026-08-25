@@ -32,7 +32,7 @@ export const mockPendingMarking: PendingMarkingItem[] = [
   { submissionId: "sub-1", officerName: "Claudine Uwase", armyNumber: "RDF-O2098", activityName: "Strategic Studies Paper", landGroup: "red", submittedAt: "2026-08-22T18:40:00", plagiarismStatus: "completed", plagiarismScore: 12 },
   { submissionId: "sub-2", officerName: "Brian Kiptoo", armyNumber: "KDF-O1187", activityName: "Strategic Studies Paper", landGroup: "red", submittedAt: "2026-08-22T20:05:00", plagiarismStatus: "completed", plagiarismScore: 34 },
   { submissionId: "sub-3", officerName: "Desire Nkurunziza", armyNumber: "BDF-O0456", activityName: "Tactical Exercise Without Troops", landGroup: "red", submittedAt: "2026-08-23T07:55:00", plagiarismStatus: "completed", plagiarismScore: 61 },
-  { submissionId: "sub-4", officerName: "Aisha Byaruhanga", armyNumber: "UPDF-O3006", activityName: "Tactical Exercise Without Troops", landGroup: "red", submittedAt: "2026-08-23T08:10:00", plagiarismStatus: "pending", plagiarismScore: null },
+  { submissionId: "sub-4", officerName: "Aisha Byaruhanga", armyNumber: "UPDF-O3006", activityName: "Tactical Exercise Without Troops", landGroup: "red", submittedAt: "2026-08-23T08:10:00", plagiarismStatus: "not_checked", plagiarismScore: null },
   { submissionId: "sub-5", officerName: "Godfrey Massawe", armyNumber: "TPDF-O1290", activityName: "Command Post Exercise", landGroup: "blue", submittedAt: "2026-08-21T15:30:00", plagiarismStatus: "failed", plagiarismScore: null },
 ];
 

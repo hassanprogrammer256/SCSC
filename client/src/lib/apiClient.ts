@@ -66,7 +66,7 @@ export async function fetchAllPages<T>(url: string): Promise<T[]> {
   const results: T[] = [];
   let next: string | null = url;
   while (next) {
-    const { data } = await apiClient.get<PaginatedResponse<T> | T[]>(next);
+    const { data }: { data: PaginatedResponse<T> | T[] } = await apiClient.get<PaginatedResponse<T> | T[]>(next);
     if (Array.isArray(data)) {
       results.push(...data);
       break;

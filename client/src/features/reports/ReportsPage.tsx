@@ -189,7 +189,7 @@ export function ReportsPage() {
                         </td>
                         <td>{formatDateTime(s.submittedAt)}</td>
                         <td>
-                          <PlagiarismChip status={s.plagiarismStatus ?? "pending"} score={s.plagiarismScore ?? null} />
+                          <PlagiarismChip status={s.plagiarismStatus ?? "not_checked"} score={s.plagiarismScore ?? null} />
                         </td>
                       </tr>
                     ))}
