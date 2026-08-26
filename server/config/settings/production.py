@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 from .base import *  # noqa: F401,F403
 from .base import BASE_DIR, MIDDLEWARE
 
-DEBUG = True
+DEBUG = False  # Change this to False for production
 
 ALLOWED_HOSTS = [host.strip() for host in os.environ.get("ALLOWED_HOSTS", "").split(",") if host.strip()]
 
@@ -53,8 +53,17 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
-REFRESH_COOKIE_SECURE = True
+# ============== FIX FOR REDIRECT LOOP ==============
+# Tell Django that it's behind a proxy that handles SSL
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# SSL Settings - must be paired with SECURE_PROXY_SSL_HEADER
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
+# Additional security settings for Render
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
