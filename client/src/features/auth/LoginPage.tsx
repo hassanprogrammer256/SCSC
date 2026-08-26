@@ -39,7 +39,7 @@ export function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="flex w-full max-w-100 flex-col gap-6 rounded-2xl border border-border bg-surface p-8 shadow-[0px_1px_3px_rgba(19,34,61,0.08),0px_1px_2px_rgba(19,34,61,0.06)]">
         <div className="flex flex-col items-center gap-3 text-center">
-          <img src="/scsc-logo.jpg" alt="SCSC crest" className="h-20 w-20 object-cover" />
+          <img src="/scsc-logo.jpg" alt="SCSC crest" className="h-20 w-20 object-contain" />
           <div>
             <Typography level="h4" sx={{ color: "var(--color-text-primary)", fontWeight: 700 }}>
               Senior Command and Staff College
