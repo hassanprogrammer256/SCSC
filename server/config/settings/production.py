@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 from .base import *  # noqa: F401,F403
 from .base import BASE_DIR, MIDDLEWARE
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [host.strip() for host in os.environ.get("ALLOWED_HOSTS", "").split(",") if host.strip()]
 
